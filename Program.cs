@@ -55,11 +55,11 @@ namespace RegShoFinraDailyShorts
                 url = website + filenamePart1 + StartDate.ToString("yyyyMMdd") + filenamePart3;
                 destination = localDirectoryRoot + filenamePart1 + StartDate.ToString("yyyyMMdd") + filenamePart3;
 
-                Console.WriteLine("Pulling down file: {0}", url);
-
-                using (WebClient client = new WebClient())
+                if ((int)StartDate.DayOfWeek > 0 && (int)StartDate.DayOfWeek < 6) // Sunday & Saturday respectively
                 {
-                    if ((int)StartDate.DayOfWeek > 0 && (int)StartDate.DayOfWeek < 6) // Sunday & Saturday respectively
+                    Console.WriteLine("Pulling down file: {0}", url);
+
+                    using (WebClient client = new WebClient())
                     {
                         try
                         {
@@ -81,14 +81,14 @@ namespace RegShoFinraDailyShorts
                             }
                         }
                     }
-                    else 
-                    {
-                        Console.WriteLine("Date {0} falls on weekend.", StartDate.ToString("yyyyMMdd"));
-                    }
+                }
+                else
+                {
+                    Console.WriteLine("Date {0} falls on weekend.", StartDate.ToString("yyyyMMdd"));
                 }
                 StartDate = StartDate.AddDays(-1);
 
-                //Do not abuse hosts
+                //Do not abuse those that give us the snackies.
                 Thread.Sleep(50);
             }
 
