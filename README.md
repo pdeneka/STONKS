@@ -29,15 +29,22 @@ You can check the ResultsFail check to include a stop date, and adjust the Start
 
 # SEC FTD
 Pulls down the SEC Failure To Deliver data in the following formats:
+
   https://www.sec.gov/files/data/fails-deliver-data/cnsfails202101a.zip
+  
   https://www.sec.gov/files/data/fails-deliver-data/cnsfails202101b.zip
 
 # DATA
 SETTLEMENT DATE: YYYYMMDD
+
 CUSIP: Customer ID?  Not sure.
+
 SYMBOL: Stock
+
 QUANTITY (FAILS): How many shares the [DTCC???] failed to deliver
+
 DESCRIPTION: Human readable stock name
+
 PRICE: USD
 
 # DATA VALIDATION
