@@ -49,13 +49,19 @@ PRICE: USD
 
 # DATA VALIDATION
 SEC uses the same format as FINRA above, with an additional trailing row, for validation:
+
 Row 1: Headers
+
 Rows 2 to N-2: data
+
 Row N-1: Trailer record count X
+
 Row N: Total Shares
 
 
 # NOTES
 SEC does not garauntee accuracy and/or delivery date.
+
 SEC can update the files as necessary.
+
 Do your own homework.
